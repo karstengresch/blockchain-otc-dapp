@@ -49,6 +49,8 @@ objects:
           imagePullPolicy: IfNotPresent
           name: parity
           ports:
+          - containerPort: 8080
+            protocol: TCP
           - containerPort: 8180
             protocol: TCP
           - containerPort: 8545
