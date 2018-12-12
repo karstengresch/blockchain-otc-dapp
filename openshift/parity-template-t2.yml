@@ -99,6 +99,10 @@ objects:
     name: parity
   spec:
     ports:
+   - name: 8080-tcp
+      port: 8080
+      protocol: TCP
+      targetPort: 8080
     - name: 8180-tcp
       port: 8180
       protocol: TCP
@@ -115,6 +119,14 @@ objects:
       deploymentconfig: parity
       app: parity
     type: ClusterIP
+- apiVersion: v1
+  kind: Route
+  metadata:
+    name: parity
+  spec:
+    to:
+      kind: Service
+      name: parity
 - kind: PersistentVolumeClaim
   apiVersion: v1
   metadata:
@@ -143,7 +155,7 @@ objects:
 
       [rpc]
       disable = false
-      port = 8545
+      port = 8080
       interface = "local"
       cors = []
       hosts = ["none"]
