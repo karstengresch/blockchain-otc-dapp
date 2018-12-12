@@ -155,14 +155,14 @@ objects:
 
       [rpc]
       disable = false
-      port = 8080
+      port = 8181
       interface = "local"
       cors = []
       hosts = ["none"]
 
       [websockets]
       disable = false
-      port = 8546
+      port = 8080
       interface = "local"
       origins = ["none"]
       hosts = ["none"]
